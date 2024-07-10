@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+//Homework 10.1
+
+let user = {
+  name: 'Alona',
+  age: 111,
+  location: 'Kharkiv',
+  occupation: 'Lecturer',
+  getUserInfo: function() {
+    return `Name: ${this.name}, Age: ${this.age}, Location: ${this.location}, Occupation: ${this.occupation}`;
+  }
+};
+
+console.log(user.getUserInfo());
+
+//Homework 10.2
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let evenNumbers = numbers.filter(number => number % 2 === 0);
+console.log(evenNumbers); 
+
+//Homework 10.3
+
+let contactBook = {
+  contacts: [
+    {name: 'Alona', phone: '+380987777777', email: 'fuel.khpi@gmail.com'},
+    {name: 'Vadym', phone: '+380678888888', email: 'example@gmail.com'}
+  ],
+  
+  findContactByName: function(name) {
+    return this.contacts.find(contact => contact.name === name);
+  },
+
+  addContact: function(name, phone, email) {
+    this.contacts.push({name: name, phone: phone, email: email});
+  }
+};
+
+let contact = contactBook.findContactByName('Alona');
+console.log(contact);
+contactBook.addContact('Kseniia', '+380995555555', 'somemail@gmail.com');
+
+console.log(contactBook.contacts);
+
+
+</script>  
+</body>
+</html>
+
